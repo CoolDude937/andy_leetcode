@@ -5,9 +5,6 @@ public:
         if (size == 0){
             return 0;
         }
-        if (size == 1){
-            return nums[0];
-        }
         //this will help us find subarrays
         int currentIndex = 0;
         //set currentMax to the first number
@@ -24,10 +21,6 @@ public:
             if (currentMax > globalMax){
                 globalMax = currentMax;
             }
-        }
-        //corner case: the whole array is bigger
-        if (std::accumulate(nums.begin(), nums.end(), 0) > globalMax){
-            return std::accumulate(nums.begin(), nums.end(), 0);
         }
         return globalMax;
     }
